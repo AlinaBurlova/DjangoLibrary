@@ -1,0 +1,22 @@
+{% extends 'library/base.html' %}
+
+{% block content %}
+<h2>Список книг</h2>
+    <table class="table">
+        <tr>
+            <th>Автор</th>
+            <th>Заголовок</th>
+            <th>Жанр</th>
+            <th>Год создания</th>
+        </tr>
+{% for book in books %}
+        <tr>
+            <td>{{book.author}}</td>
+            <td>{{book.title}}</td>
+            <td>{{book.genre}}</td>
+            <td>{{book.year_of_creation}}</td>
+        </tr>
+{% endfor %}
+    </table>
+
+{% endblock content %}

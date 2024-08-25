@@ -1,0 +1,22 @@
+{% extends 'library/base.html' %}
+
+{% block content %}
+<h2>Список авторов</h2>
+    <table class="table">
+        <tr>
+            <th>Имя</th>
+            <th>Фамилия</th>
+            <th>Отчество</th>
+            <th>Дата рождения</th>
+        </tr>
+{% for author in authors %}
+        <tr>
+            <td>{{author.first_name}}</td>
+            <td>{{author.last_name}}</td>
+            <td>{{author.patronymic}}</td>
+            <td>{{author.date_of_birth}}</td>
+        </tr>
+{% endfor %}
+    </table>
+
+{% endblock content %}

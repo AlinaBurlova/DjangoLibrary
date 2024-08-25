@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{{title}}</title>
+ <link rel="stylesheet" href="{% static 'styles/file.css' %}">
+</head>
+<body>
+    <nav class="header">
+      <div class="left">
+        <a href="{% url 'library:index' %}">Главная</a>
+      </div>
+      <div class="right">
+        <a href="{% url 'library:add_author' %}">Добавить автора</a>
+        <a href="{% url 'library:author_list' %}">Авторы</a>
+        <a href="{% url 'library:add_book' %}">Добавить книгу</a>
+        <a href="{% url 'library:book_list' %}">Книги</a>
+      </div>
+    </nav>
+    <section class="main">
+    {% block content %}
+    {% endblock content %}
+    </section>
+</body>
+</html>
